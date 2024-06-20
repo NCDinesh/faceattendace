@@ -1,1 +1,17 @@
-klasjdf
+To copy file from one branch to another starting from cloning 
+
+git clone https://github.com/Biswash
+
+git fetch origin  // updates the latest origin from the GitHub repository
+
+git branch -r
+
+// To copy file from branch 1 to branch 2
+
+git switch branch 1
+
+git switch branch 2
+
+git checkout branch 1 -- .  // this command copies all the files from the branch 1 to branch 2 
+
+git checkout branch 1 -- path/to/file.txt    // this command copies single file from the source branch
