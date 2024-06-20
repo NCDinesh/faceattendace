@@ -7,7 +7,7 @@ cap = cv2.VideoCapture(0)
 cap.set(3,1280)
 cap.set(4,720)
 
-file = open('Project/FeatureFile.p','rb')
+file = open('faceattendace/FeatureFile.p','rb')
 encodeListKnownWithIds = pickle.load(file)
 file.close()
 encodeListKnown , studentIds = encodeListKnownWithIds
@@ -32,13 +32,13 @@ while True:
 
         if matches[matchIndex] and faceDist[matchIndex]<=0.5:
             name = studentIds[matchIndex].upper()
-            print("Known Face")
+            #print("Known Face")
             y1,x2,y2,x1 = faceLocation
             y1,x2,y2,x1 = y1*4 , x2*4 , y2*4 , x1*4  
             cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
             cv2.putText(img, name, (x1, y2 + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2)
         elif faceDist[matchIndex]>0.5:
-            print("Unknown Face")
+            #print("Unknown Face")
             name = "Unknown"
             y1,x2,y2,x1 = faceLocation
             y1,x2,y2,x1 = y1*4 , x2*4 , y2*4 , x1*4  
