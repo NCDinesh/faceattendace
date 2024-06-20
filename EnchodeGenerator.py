@@ -33,7 +33,7 @@ def findEncodings(imagesList):
 print("Encoding Started...")
 encodeListKnown = findEncodings(imgList)
 #print(encodeListKnown)
-#print("Encoding Complete")
+print("Encoding Complete")
 
 encodeListKnownWithIds = [encodeListKnown , studentIds]
 
