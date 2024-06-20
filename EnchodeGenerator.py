@@ -37,7 +37,7 @@ print("Encoding Complete")
 
 encodeListKnownWithIds = [encodeListKnown , studentIds]
 
-file = open("Project/FeatureFile.p",'wb')
+file = open("faceattendace/FeatureFile.p",'wb')
 pickle.dump(encodeListKnownWithIds,file)
 file.close()
 print("Facial Encodings saved as FeatureFile.p")
