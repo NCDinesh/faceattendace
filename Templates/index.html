@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <button id="start-button">Start Camera</button>
+    <img id="video" width="640" height="480" />
+
+    <script>
+        const startButton = document.getElementById('start-button');
+        const video = document.getElementById('video');
+
+        startButton.addEventListener('click', () => {
+            video.src = '/video_feed';
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'q') {
+                fetch('/stop_feed').then(response => {
+                    if (response.ok) {
+                        video.src = '';
+                        alert('Camera stopped');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
